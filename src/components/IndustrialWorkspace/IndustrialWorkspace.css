@@ -1,0 +1,472 @@
+/* =================================
+   COMPLETE WORKSPACE
+================================= */
+
+.industrial-workspace {
+
+  min-height: 100vh;
+
+  padding:
+    110px
+    20px
+    95px;
+
+  box-sizing:
+    border-box;
+
+  display: grid;
+
+  grid-template-columns:
+    210px
+    minmax(0, 1fr)
+    230px;
+
+  gap: 18px;
+
+  background:
+    #eef2f7;
+
+}
+
+
+/* =================================
+   COMMON PANEL
+================================= */
+
+.workspace-left,
+.workspace-middle,
+.workspace-right {
+
+  background:
+    #ffffff;
+
+  border:
+
+    1px solid
+    #dce3ec;
+
+  border-radius:
+    14px;
+
+  box-shadow:
+
+    0 5px 20px
+
+    rgba(
+      15,
+      23,
+      42,
+      0.08
+    );
+
+}
+
+
+/* =================================
+   LEFT CARD
+================================= */
+
+.workspace-left {
+
+  padding:
+    18px;
+
+}
+
+
+.panel-title {
+
+  margin-bottom:
+    18px;
+
+  color:
+    #0f172a;
+
+  font-size:
+    17px;
+
+  font-weight:
+    700;
+
+}
+
+
+.menu-button {
+
+  width:
+    100%;
+
+  margin-bottom:
+    10px;
+
+  padding:
+    13px;
+
+  border:
+    none;
+
+  border-radius:
+    9px;
+
+  background:
+    transparent;
+
+  color:
+    #475569;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  transition:
+    0.25s;
+
+}
+
+
+.menu-button:hover {
+
+  background:
+    #eef6ff;
+
+  color:
+    #2563eb;
+
+}
+
+
+.menu-button.active {
+
+  color:
+    #ffffff;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #0284c7,
+      #2563eb
+    );
+
+}
+
+
+/* =================================
+   MIDDLE CARD
+================================= */
+
+.workspace-middle {
+
+  min-width:
+    0;
+
+  overflow:
+    hidden;
+
+}
+
+
+.middle-header {
+
+  min-height:
+    75px;
+
+  padding:
+    15px
+    20px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  border-bottom:
+
+    1px solid
+    #e2e8f0;
+
+}
+
+
+.middle-header h1 {
+
+  margin:
+    0;
+
+  color:
+    #0f172a;
+
+  font-size:
+    23px;
+
+}
+
+
+.middle-header p {
+
+  margin:
+
+    5px
+    0
+    0;
+
+  color:
+    #64748b;
+
+  font-size:
+    13px;
+
+}
+
+
+.system-status {
+
+  padding:
+
+    7px
+    12px;
+
+  border-radius:
+    20px;
+
+  color:
+    #15803d;
+
+  background:
+    #dcfce7;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+}
+
+
+.middle-content {
+
+  padding:
+    18px;
+
+}
+
+
+/* =================================
+   THREE CAMERA GRID
+================================= */
+
+.camera-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    15px;
+
+}
+
+
+/* =================================
+   HISTORY / ANALYTICS
+================================= */
+
+.content-placeholder {
+
+  min-height:
+    400px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  color:
+    #64748b;
+
+}
+
+
+.content-placeholder h2 {
+
+  color:
+    #0f172a;
+
+}
+
+
+/* =================================
+   RIGHT CARD
+================================= */
+
+.workspace-right {
+
+  padding:
+    18px;
+
+}
+
+
+.action-button,
+.control-button {
+
+  width:
+    100%;
+
+  margin-bottom:
+    11px;
+
+  padding:
+    12px;
+
+  border-radius:
+    8px;
+
+  cursor:
+    pointer;
+
+}
+
+
+.action-button {
+
+  border:
+    none;
+
+  color:
+    #ffffff;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #06b6d4,
+      #2563eb
+    );
+
+}
+
+
+.control-button {
+
+  border:
+
+    1px solid
+    #cbd5e1;
+
+  color:
+    #334155;
+
+  background:
+    #ffffff;
+
+}
+
+
+.system-information {
+
+  margin-top:
+    25px;
+
+  padding:
+    14px;
+
+  border-radius:
+    10px;
+
+  background:
+    #f8fafc;
+
+}
+
+
+.system-information h3 {
+
+  color:
+    #0f172a;
+
+  font-size:
+    14px;
+
+}
+
+
+.system-information p {
+
+  color:
+    #64748b;
+
+  font-size:
+    13px;
+
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (
+  max-width: 1200px
+) {
+
+  .camera-grid {
+
+    grid-template-columns:
+
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+  }
+
+}
+
+
+@media (
+  max-width: 900px
+) {
+
+  .industrial-workspace {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .camera-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}

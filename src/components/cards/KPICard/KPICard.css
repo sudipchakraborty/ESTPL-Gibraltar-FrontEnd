@@ -1,0 +1,83 @@
+.kpi-card{
+
+    min-height:160px;
+
+    transition:.25s;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.kpi-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100%;
+
+}
+
+.kpi-icon{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.kpi-value{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.kpi-title{
+
+    color:#607d8b;
+
+    font-size:15px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+/* Border Colors */
+
+.primary{
+
+    border-left:6px solid #1565C0;
+
+}
+
+.success{
+
+    border-left:6px solid #2E7D32;
+
+}
+
+.danger{
+
+    border-left:6px solid #D32F2F;
+
+}
+
+.warning{
+
+    border-left:6px solid #F9A825;
+
+}

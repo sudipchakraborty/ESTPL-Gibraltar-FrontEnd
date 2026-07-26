@@ -1,0 +1,162 @@
+.carousel-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  pointer-events: auto;
+}
+
+/* Overlay */
+
+.carousel-overlay {
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+}
+
+.carousel-overlay h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.carousel-overlay p {
+  font-size: 1.4rem;
+}
+
+/* =====================
+   FADE
+===================== */
+
+.carousel-slide.fade {
+  transition: opacity 1s ease;
+}
+
+.carousel-slide.fade.active {
+  opacity: 1;
+}
+
+/* =====================
+   SLIDE LEFT
+===================== */
+
+.carousel-slide.slide-left {
+  transform: translateX(100%);
+  transition: all 0.8s ease;
+}
+
+.carousel-slide.slide-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =====================
+   SLIDE RIGHT
+===================== */
+
+.carousel-slide.slide-right {
+  transform: translateX(-100%);
+  transition: all 0.8s ease;
+}
+
+.carousel-slide.slide-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =====================
+   ZOOM
+===================== */
+
+.carousel-slide.zoom {
+  transform: scale(1.15);
+
+  transition:
+    opacity 1s ease,
+    transform 5s linear;
+}
+
+.carousel-slide.zoom.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =====================
+   BLUR
+===================== */
+
+.carousel-slide.blur {
+  filter: blur(15px);
+
+  transition:
+    opacity 1.2s ease,
+    filter 1.2s ease;
+}
+
+.carousel-slide.blur.active {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* =====================
+   PREMIUM
+===================== */
+
+.carousel-slide.premium {
+  transform: scale(1.1);
+
+  filter: blur(10px);
+
+  transition:
+    opacity 1.2s ease,
+    transform 6s linear,
+    filter 1.2s ease;
+}
+
+.carousel-slide.premium.active {
+  opacity: 1;
+
+  transform: scale(1);
+
+  filter: blur(0);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 350px;
+  }
+
+  .carousel-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-overlay p {
+    font-size: 1rem;
+  }
+}

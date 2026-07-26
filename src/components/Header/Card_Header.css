@@ -1,0 +1,673 @@
+/* ===================================
+   HEADER
+=================================== */
+
+.header-card {
+
+  position:
+    fixed;
+
+  top:
+    0;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  height:
+    90px;
+
+  padding:
+    0 32px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    25px;
+
+  box-sizing:
+    border-box;
+
+  background:
+
+    rgba(
+      251,
+      251,
+      252,
+      0.96
+    );
+
+  backdrop-filter:
+    blur(20px);
+
+  border-top:
+
+    2px solid
+    #38222b;
+
+  border-bottom:
+
+    1px solid
+    #dce3ec;
+
+  box-shadow:
+
+    0 3px 12px
+
+    rgba(
+      15,
+      23,
+      42,
+      0.06
+    );
+
+  z-index:
+    10000;
+
+}
+
+
+/* ===================================
+   LEFT LOGO AREA
+=================================== */
+
+.header-left {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  flex-shrink:
+    0;
+
+}
+
+
+/* All company logos */
+
+.header-logo {
+
+  width:
+    auto;
+
+  object-fit:
+    contain;
+
+  cursor:
+    pointer;
+
+  transition:
+
+    transform
+    0.25s ease;
+
+}
+
+
+.header-logo:hover {
+
+  transform:
+    scale(1.05);
+
+}
+
+
+/* First logo */
+
+.logo-primary {
+
+  height:
+    68px;
+
+  max-width:
+    115px;
+
+}
+
+
+/* Second logo */
+
+.logo-secondary {
+
+  height:
+    55px;
+
+  max-width:
+    100px;
+
+}
+
+
+/* Right company logo */
+
+.logo-right {
+
+  height:
+    58px;
+
+  max-width:
+    125px;
+
+}
+
+
+/* Vertical logo separator */
+
+.logo-divider {
+
+  width:
+    1px;
+
+  height:
+    45px;
+
+  background:
+    #d5dce5;
+
+}
+
+
+/* Company/product name */
+
+.company-name {
+
+  color:
+    #071507;
+
+  font-size:
+    1.55rem;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+
+  cursor:
+    pointer;
+
+  letter-spacing:
+    0.4px;
+
+  transition:
+
+    color
+    0.25s ease;
+
+}
+
+
+.company-name:hover {
+
+  color:
+    #0284c7;
+
+}
+
+
+/* ===================================
+   CENTER NAVIGATION
+=================================== */
+
+.header-center {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    5px;
+
+  flex:
+    1;
+
+}
+
+
+.nav-link {
+
+  padding:
+    10px 12px;
+
+  border:
+    none;
+
+  border-radius:
+    8px;
+
+  color:
+    #0e0447;
+
+  background:
+    transparent;
+
+  font-size:
+    14px;
+
+  white-space:
+    nowrap;
+
+  cursor:
+    pointer;
+
+  transition:
+
+    color
+    0.25s ease,
+
+    background
+    0.25s ease;
+
+}
+
+
+.nav-link:hover {
+
+  color:
+    #0284c7;
+
+  background:
+
+    rgba(
+      2,
+      132,
+      199,
+      0.08
+    );
+
+}
+
+
+/* ===================================
+   DROPDOWN
+=================================== */
+
+.dropdown {
+
+  position:
+    relative;
+
+}
+
+
+.dropdown-menu {
+
+  position:
+    absolute;
+
+  top:
+    46px;
+
+  left:
+    0;
+
+  min-width:
+    270px;
+
+  padding:
+    10px;
+
+  border:
+
+    1px solid
+
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  border-radius:
+    13px;
+
+  background:
+
+    rgba(
+      10,
+      15,
+      25,
+      0.98
+    );
+
+  box-shadow:
+
+    0 20px 45px
+
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+
+  opacity:
+    0;
+
+  visibility:
+    hidden;
+
+  transform:
+
+    translateY(
+      8px
+    );
+
+  transition:
+
+    opacity
+    0.2s ease,
+
+    visibility
+    0.2s ease,
+
+    transform
+    0.2s ease;
+
+  z-index:
+    99999;
+
+}
+
+
+.dropdown:hover
+.dropdown-menu {
+
+  opacity:
+    1;
+
+  visibility:
+    visible;
+
+  transform:
+
+    translateY(
+      0
+    );
+
+}
+
+
+.dropdown-item {
+
+  width:
+    100%;
+
+  padding:
+    12px 14px;
+
+  border:
+    none;
+
+  border-radius:
+    8px;
+
+  color:
+    #ffffff;
+
+  background:
+    transparent;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+}
+
+
+.dropdown-item:hover {
+
+  color:
+    #00d4ff;
+
+  background:
+
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+}
+
+
+/* ===================================
+   RIGHT AREA
+=================================== */
+
+.header-right {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    flex-end;
+
+  gap:
+    15px;
+
+  flex-shrink:
+    0;
+
+}
+
+
+.login-btn {
+
+  padding:
+    10px 17px;
+
+  border:
+
+    1px solid
+    #cbd5e1;
+
+  border-radius:
+    9px;
+
+  color:
+    #334155;
+
+  background:
+    #ffffff;
+
+  font-weight:
+    600;
+
+  cursor:
+    pointer;
+
+  transition:
+    0.25s ease;
+
+}
+
+
+.login-btn:hover {
+
+  color:
+    #0284c7;
+
+  border-color:
+    #0284c7;
+
+  background:
+    #f0f9ff;
+
+}
+
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (
+  max-width: 1250px
+) {
+
+  .company-name {
+
+    font-size:
+      1.25rem;
+
+  }
+
+
+  .header-center {
+
+    gap:
+      0;
+
+  }
+
+
+  .nav-link {
+
+    padding:
+
+      9px
+      8px;
+
+    font-size:
+      13px;
+
+  }
+
+
+  .logo-primary {
+
+    max-width:
+      90px;
+
+  }
+
+
+  .logo-secondary {
+
+    max-width:
+      80px;
+
+  }
+
+
+  .logo-right {
+
+    max-width:
+      95px;
+
+  }
+
+}
+
+
+@media (
+  max-width: 1000px
+) {
+
+  .header-center {
+
+    display:
+      none;
+
+  }
+
+}
+
+
+@media (
+  max-width: 700px
+) {
+
+  .header-card {
+
+    height:
+      75px;
+
+    padding:
+      0 15px;
+
+  }
+
+
+  .company-name {
+
+    display:
+      none;
+
+  }
+
+
+  .logo-divider {
+
+    display:
+      none;
+
+  }
+
+
+  .logo-primary {
+
+    height:
+      55px;
+
+    max-width:
+      80px;
+
+  }
+
+
+  .logo-secondary {
+
+    height:
+      45px;
+
+    max-width:
+      70px;
+
+  }
+
+
+  .logo-right {
+
+    height:
+      45px;
+
+    max-width:
+      75px;
+
+  }
+
+
+  .login-btn {
+
+    display:
+      none;
+
+  }
+
+}

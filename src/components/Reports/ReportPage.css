@@ -1,0 +1,105 @@
+.report-page{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.report-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    background:#fff;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+.report-filters select,
+.report-filters input{
+    padding:8px 12px;
+    min-width:150px;
+}
+
+.report-filters button{
+    padding:8px 18px;
+    cursor:pointer;
+}
+
+.report-filters button:disabled{
+    cursor:not-allowed;
+    opacity:.55;
+}
+
+.report-error{
+    color:#c62828;
+    margin:0;
+}
+
+.report-empty{
+    color:#607d8b;
+    padding:30px !important;
+    text-align:center !important;
+}
+
+.report-summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.summary-card{
+    background:#fff;
+    padding:20px;
+    border-radius:8px;
+    text-align:center;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+.summary-card.success{
+    border-left:5px solid #28a745;
+}
+
+.summary-card.danger{
+    border-left:5px solid #dc3545;
+}
+
+.report-table{
+    background:#fff;
+    color:#263238;
+    border-radius:8px;
+    overflow:auto;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+.report-table table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.report-table th,
+.report-table td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    color:#263238;
+}
+
+.report-table th{
+    background:#f7f7f7;
+    color:#37474f;
+}
+
+.report-table a{
+    color:#1565c0;
+}
+
+.pass{
+    color:#28a745 !important;
+    font-weight:bold;
+}
+
+.fail{
+    color:#dc3545 !important;
+    font-weight:bold;
+}

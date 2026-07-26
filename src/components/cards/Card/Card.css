@@ -1,0 +1,50 @@
+/* ==========================================================
+   Industrial Visual AI Framework
+   Reusable Card
+========================================================== */
+
+.iva-card{
+
+    background:#ffffff;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+    border:1px solid #edf2f7;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.iva-card-header{
+
+    padding:18px 24px;
+
+    background:#f8fafc;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.iva-card-header h3{
+
+    margin:0;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#1f2937;
+
+}
+
+.iva-card-body{
+
+    padding:24px;
+
+}

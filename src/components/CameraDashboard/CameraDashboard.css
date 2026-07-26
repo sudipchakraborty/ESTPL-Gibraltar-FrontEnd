@@ -1,0 +1,63 @@
+.camera-dashboard {
+  min-height: 100vh;
+
+  padding:
+    120px
+    30px
+    110px;
+
+  background:
+    #f1f5f9;
+
+  box-sizing:
+    border-box;
+}
+
+/* Dashboard title */
+
+.camera-dashboard-header {
+  max-width: 1500px;
+
+  margin:
+    0 auto
+    25px;
+}
+
+.camera-dashboard-header h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+.camera-dashboard-header p {
+  margin:
+    7px 0 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+/* Camera grid */
+
+.camera-grid {
+  width: 100%;
+
+  max-width: 1500px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(350px, 1fr)
+    );
+
+  gap: 22px;
+}

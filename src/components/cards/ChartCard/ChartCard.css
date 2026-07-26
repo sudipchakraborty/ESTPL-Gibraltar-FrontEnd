@@ -1,0 +1,33 @@
+.chart-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.chart-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.chart-header h3{
+
+    margin:0;
+
+    font-size:18px;
+
+}
+
+.chart-body{
+
+    min-height:300px;
+
+}

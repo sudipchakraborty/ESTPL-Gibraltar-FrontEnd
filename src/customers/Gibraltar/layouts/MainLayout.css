@@ -1,0 +1,15 @@
+.layout-content{
+
+    margin-top:90px;
+
+    margin-left:300px;
+
+    margin-right:320px;
+
+    margin-bottom:75px;
+
+    padding:20px;
+
+    min-height:calc(100vh - 165px);
+
+}

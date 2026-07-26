@@ -1,0 +1,13 @@
+.auth-checking {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  background: #f5f7fa;
+  color: #334155;
+}

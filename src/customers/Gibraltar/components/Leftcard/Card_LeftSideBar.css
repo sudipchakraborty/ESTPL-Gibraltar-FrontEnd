@@ -1,0 +1,27 @@
+.card {
+
+  position: fixed;
+
+  top: 100px;
+
+  left: 0;
+
+  width: 300px;
+
+  height: calc(100vh - 200px);
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background: #f7f9fa;
+
+  box-shadow: 0 4px 12px rgba(157,195,149,.68);
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow-y: auto;
+
+}

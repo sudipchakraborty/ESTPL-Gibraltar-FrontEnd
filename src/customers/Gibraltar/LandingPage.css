@@ -1,0 +1,221 @@
+/* ==========================================
+   PAGE
+========================================== */
+
+.landing{
+
+    min-height:calc(100vh - 165px);
+
+    padding:20px 0 0;
+
+    background:#0f607f;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+/* ==========================================
+   MAIN PANEL
+========================================== */
+
+.launcher{
+
+    width:90%;
+
+    max-width:1100px;
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.launcher-title{
+
+    color:white;
+
+    margin-bottom:70px;
+
+}
+
+.launcher-title h1{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+}
+
+.launcher-title p{
+
+    font-size:20px;
+
+    opacity:.9;
+
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.launcher-grid{
+
+    display:grid;
+
+    margin-top:100px;
+
+    grid-template-columns:repeat(2,minmax(280px,320px));
+
+    justify-content:center;
+
+    gap:45px;
+
+    width:100%;
+
+    max-width:685px;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.launcher-card{
+
+    height:200px;
+
+    border-radius:22px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.25s;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 8px 25px rgba(0,0,0,.20);
+
+}
+
+.launcher-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+        0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.launcher-icon{
+
+    font-size:42px;
+
+    margin-bottom:18px;
+
+}
+
+.launcher-card h2{
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:500;
+
+}
+
+/* ==========================================
+   COLORS
+========================================== */
+
+.blue{
+
+    background:linear-gradient(135deg,#4f8fd9,#6ba8ef);
+
+}
+
+.green{
+
+    background:linear-gradient(135deg,#1ea672,#42c98d);
+
+}
+
+.cyan{
+
+    background:linear-gradient(135deg,#59b4d8,#82d0ef);
+
+}
+
+.orange{
+
+    background:linear-gradient(135deg,#f39c12,#ffbf4d);
+
+}
+
+.purple{
+
+    background:linear-gradient(135deg,#7d5fff,#9980fa);
+
+}
+
+.gray{
+
+    background:linear-gradient(135deg,#6c7a89,#95a5a6);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+    .launcher-grid{
+
+        grid-template-columns:repeat(2,260px);
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .launcher-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .launcher-card{
+
+        width:280px;
+
+        margin:auto;
+
+    }
+
+    .launcher-title h1{
+
+        font-size:30px;
+
+    }
+
+}

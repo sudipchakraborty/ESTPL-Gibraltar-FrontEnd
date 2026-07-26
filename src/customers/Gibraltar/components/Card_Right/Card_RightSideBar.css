@@ -1,0 +1,23 @@
+.right-card {
+
+  position: fixed;
+
+  top: 100px;
+
+  right: 0;
+
+  width: 320px;
+
+  height: calc(100vh - 200px);
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background: #f8fafc;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+
+  overflow-y: auto;
+
+}

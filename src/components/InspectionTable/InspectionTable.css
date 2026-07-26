@@ -1,0 +1,420 @@
+/* =================================
+   INSPECTION SECTION
+================================= */
+
+.inspection-section {
+
+  margin-top:
+    24px;
+
+  overflow:
+    hidden;
+
+  border:
+
+    1px solid
+    #d8e1eb;
+
+  border-radius:
+    12px;
+
+  background:
+    #ffffff;
+
+}
+
+
+/* =================================
+   TABLE HEADER AREA
+================================= */
+
+.inspection-header {
+
+  min-height:
+    68px;
+
+  padding:
+    14px 18px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    15px;
+
+  border-bottom:
+
+    1px solid
+    #dce3ec;
+
+}
+
+
+.inspection-header h2 {
+
+  margin:
+    0;
+
+  color:
+    #0f172a;
+
+  font-size:
+    18px;
+
+}
+
+
+.inspection-header p {
+
+  margin:
+
+    5px
+    0
+    0;
+
+  color:
+    #64748b;
+
+  font-size:
+    12px;
+
+}
+
+
+/* =================================
+   SOCKET STATUS
+================================= */
+
+.socket-status {
+
+  padding:
+
+    7px
+    11px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+
+  border-radius:
+    20px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+}
+
+
+.socket-status-dot {
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    currentColor;
+
+}
+
+
+.socket-status.connected {
+
+  color:
+    #15803d;
+
+  background:
+    #dcfce7;
+
+}
+
+
+.socket-status.disconnected {
+
+  color:
+    #dc2626;
+
+  background:
+    #fee2e2;
+
+}
+
+
+/* =================================
+   TABLE
+================================= */
+
+.inspection-table-container {
+  width: 100%;
+  max-height: 420px;
+
+  overflow-x: auto;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+
+.inspection-table {
+
+  width:
+    100%;
+
+  min-width:
+    1250px;
+
+  border-collapse:
+    collapse;
+
+  color:
+    #334155;
+
+  font-size:
+    12px;
+
+}
+
+
+.inspection-table th {
+
+  padding:
+
+    12px
+    10px;
+
+  border-right:
+
+    1px solid
+    #94a3b8;
+
+  border-bottom:
+
+    1px solid
+    #94a3b8;
+
+  color:
+    #0f172a;
+
+  background:
+    #bceaf7;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  text-align:
+    center;
+
+  white-space:
+    nowrap;
+
+}
+
+
+.inspection-table td {
+
+  min-height:
+    42px;
+
+  padding:
+
+    11px
+    10px;
+
+  border-right:
+
+    1px solid
+    #d5dde7;
+
+  border-bottom:
+
+    1px solid
+    #d5dde7;
+
+  text-align:
+    center;
+
+  vertical-align:
+    middle;
+
+}
+
+
+.inspection-table tbody tr {
+
+  transition:
+
+    background
+    0.2s ease;
+
+}
+
+
+.inspection-table tbody tr:hover {
+
+  background:
+    #f1f7fc;
+
+}
+
+
+.inspection-table tbody tr:nth-child(
+  even
+) {
+
+  background:
+    #f8fafc;
+
+}
+
+
+.captured-data {
+
+  color:
+    #075985;
+
+  font-weight:
+    600;
+
+}
+
+
+/* =================================
+   PASS / FAIL
+================================= */
+
+.inspection-result {
+
+  min-width:
+    58px;
+
+  padding:
+
+    5px
+    9px;
+
+  display:
+    inline-block;
+
+  border-radius:
+    15px;
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+}
+
+
+.inspection-result.pass {
+
+  color:
+    #15803d;
+
+  background:
+    #dcfce7;
+
+}
+
+
+.inspection-result.fail {
+
+  color:
+    #dc2626;
+
+  background:
+    #fee2e2;
+
+}
+
+
+.inspection-result.warning {
+
+  color:
+    #b45309;
+
+  background:
+    #fef3c7;
+
+}
+
+
+.inspection-result.unknown {
+
+  color:
+    #475569;
+
+  background:
+    #e2e8f0;
+
+}
+
+
+/* =================================
+   EVIDENCE LINK
+================================= */
+
+.inspection-table a {
+
+  color:
+    #0284c7;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    none;
+
+}
+
+
+.inspection-table a:hover {
+
+  text-decoration:
+    underline;
+
+}
+
+
+/* =================================
+   EMPTY TABLE
+================================= */
+
+.empty-inspection {
+
+  height:
+    100px;
+
+  color:
+    #64748b;
+
+  font-size:
+    13px;
+
+  text-align:
+    center;
+
+}

@@ -6,13 +6,6 @@ import "./ReportPage.css";
 const formatStatus = (status) =>
     status === "PASS" ? "Matched" : status === "FAIL" ? "Mismatch" : status;
 
-const formatConfidence = (confidence) => {
-    if (confidence === null || confidence === undefined) return "-";
-
-    const value = Number(confidence);
-    return Number.isFinite(value) ? `${(value * 100).toFixed(1)}%` : "-";
-};
-
 function ReportPage() {
     const [period, setPeriod] = useState("all");
     const [fromDate, setFromDate] = useState("");
@@ -89,7 +82,6 @@ function ReportPage() {
             Device: record.camera_id,
             Module: record.event_type || "",
             Status: formatStatus(record.status),
-            Confidence: formatConfidence(record.confidence),
             Comments: record.comments || "",
             Remarks: record.remarks || "",
             Evidence: record.evidence_link || "",
@@ -166,7 +158,6 @@ function ReportPage() {
                                 <th>Device</th>
                                 <th>Module</th>
                                 <th>Status</th>
-                                <th>Confidence</th>
                                 <th>Comments</th>
                                 <th>Remarks</th>
                                 <th>Evidence</th>
@@ -182,7 +173,6 @@ function ReportPage() {
                                     <td className={record.status === "PASS" ? "pass" : "fail"}>
                                         {formatStatus(record.status)}
                                     </td>
-                                    <td>{formatConfidence(record.confidence)}</td>
                                     <td>{record.comments || "-"}</td>
                                     <td>{record.remarks || "-"}</td>
                                     <td>
@@ -194,7 +184,7 @@ function ReportPage() {
                             ))}
                             {filteredRecords.length === 0 && (
                                 <tr>
-                                    <td colSpan="9" className="report-empty">
+                                    <td colSpan="8" className="report-empty">
                                         No inspection records match the selected filters.
                                     </td>
                                 </tr>

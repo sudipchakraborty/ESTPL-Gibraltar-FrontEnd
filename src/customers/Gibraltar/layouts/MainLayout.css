@@ -13,3 +13,11 @@
     min-height:calc(100vh - 165px);
 
 }
+
+.layout-content--full{
+
+    margin-left:0;
+
+    margin-right:0;
+
+}

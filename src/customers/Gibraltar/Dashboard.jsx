@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import PassFailChart from "../../components/charts/PassFailChart/PassFailChart";
 import DashboardRepository from "../../repositories/DashboardRepository";
 
 function Dashboard() {
+  const navigate = useNavigate();
   const [dashboard, setDashboard] = useState({
     plant: "Gibraltar Air Spring",
     section: "Assembly Line - 01",
@@ -67,6 +69,14 @@ function Dashboard() {
           </span>
 
         </div>
+
+        <button
+          type="button"
+          className="reportButton"
+          onClick={() => navigate("/reports")}
+        >
+          REPORT
+        </button>
 
       </section>
 

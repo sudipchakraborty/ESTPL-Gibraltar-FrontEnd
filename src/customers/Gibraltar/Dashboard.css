@@ -43,6 +43,32 @@
     font-size: 15px;
 }
 
+.reportButton {
+    align-self: flex-start;
+    padding: 11px 24px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: white;
+    color: #1565c0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+    transition: transform .2s, background-color .2s, color .2s;
+}
+
+.reportButton:hover {
+    transform: translateY(-2px);
+    background: transparent;
+    color: white;
+}
+
+.reportButton:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, .65);
+    outline-offset: 3px;
+}
+
 /* ==========================================================
    KPI CARDS
 ========================================================== */
@@ -345,6 +371,10 @@
 
         text-align:center;
 
+    }
+
+    .reportButton {
+        align-self: center;
     }
 
     .eventCard{

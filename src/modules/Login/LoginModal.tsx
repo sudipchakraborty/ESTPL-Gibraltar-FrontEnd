@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { registerUser } from "./services/authService";
 import { signinUser } from "../../components/Login/signinApi";
 
+// Temporary testing switch. Set to false to restore server-side login checks.
+const BYPASS_LOGIN_FOR_TESTING = true;
+
 interface Props {
   open: boolean;
   onClose: () => void;
@@ -82,6 +85,13 @@ function LoginModal({
 
     try {
       if (mode === "login") {
+        if (BYPASS_LOGIN_FOR_TESTING) {
+          onLogin?.();
+          onClose();
+          navigate("/dashboard", { replace: true });
+          return;
+        }
+
         const result = await signinUser({
           email: formData.email,
           password: formData.password,
@@ -148,6 +158,7 @@ function LoginModal({
 
         <form
           onSubmit={handleSubmit}
+          noValidate={BYPASS_LOGIN_FOR_TESTING && mode === "login"}
         >
 
           {

@@ -18,9 +18,18 @@ interface InspectionResponse {
     data: InspectionRecord[];
 }
 
+interface InspectionDetailResponse {
+    success: boolean;
+    data: InspectionRecord;
+}
+
 class ReportRepository {
     async getInspections(limit = 5000): Promise<InspectionResponse> {
         return await api.get(`/api/inspections?limit=${limit}`) as InspectionResponse;
+    }
+
+    async getInspection(id: string | number): Promise<InspectionDetailResponse> {
+        return await api.get(`/api/inspections/${encodeURIComponent(id)}`) as InspectionDetailResponse;
     }
 }
 

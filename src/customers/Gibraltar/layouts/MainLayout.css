@@ -1,10 +1,10 @@
 .layout-content{
 
-    margin-top:90px;
+    margin-top:148px;
 
-    margin-left:300px;
+    margin-left:0;
 
-    margin-right:320px;
+    margin-right:0;
 
     margin-bottom:75px;
 
@@ -13,6 +13,9 @@
     min-height:calc(100vh - 165px);
 
 }
+
+.layout-content > .industrial-workspace{min-height:calc(100vh - 243px);padding:20px}
+@media(max-width:700px){.layout-content{margin-top:133px;padding:10px}}
 
 .layout-content--full{
 

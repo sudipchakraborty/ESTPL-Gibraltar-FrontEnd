@@ -1,0 +1,7 @@
+.app-navigation{position:fixed;top:90px;left:0;right:0;z-index:9000;height:58px;display:flex;align-items:center;border-bottom:1px solid #dbe3ec;background:rgba(255,255,255,.97);box-shadow:0 4px 14px rgba(15,23,42,.06);backdrop-filter:blur(12px)}
+.app-navigation-inner{width:min(1180px,100%);margin:auto;padding:0 24px;display:flex;justify-content:center;gap:8px;box-sizing:border-box}
+.app-navigation-link{min-width:130px;padding:10px 17px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;color:#475569;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s,color .2s,transform .2s}
+.app-navigation-link:hover{color:#075985;background:#f0f9ff;transform:translateY(-1px)}
+.app-navigation-link.active{color:#fff;background:#0f607f;box-shadow:0 4px 10px rgba(15,96,127,.22)}
+.app-navigation-icon{font-size:16px}
+@media(max-width:700px){.app-navigation{top:75px}.app-navigation-inner{padding:0 8px;gap:3px}.app-navigation-link{min-width:0;flex:1;padding:9px 5px;font-size:12px}.app-navigation-icon{display:none}}

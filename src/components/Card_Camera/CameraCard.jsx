@@ -63,6 +63,7 @@ function CameraCard({
             autoPlay
             playsInline
             muted
+            disablePictureInPicture
           />
         ) : (
           <div className="camera-no-signal">

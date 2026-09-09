@@ -8,5 +8,5 @@ if not exist "C:\Program Files\nodejs\npm.cmd" (
 )
 
 set "PATH=C:\Program Files\nodejs;%PATH%"
-call "C:\Program Files\nodejs\npm.cmd" run dev -- --host 0.0.0.0
+call "C:\Program Files\nodejs\npm.cmd" run dev -- --host 0.0.0.0 --open
 exit /b %ERRORLEVEL%

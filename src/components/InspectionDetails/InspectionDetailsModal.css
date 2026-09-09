@@ -1,0 +1,17 @@
+.inspection-modal-backdrop{position:fixed!important;inset:0!important;z-index:2147483647!important;display:flex!important;align-items:flex-start!important;justify-content:center!important;box-sizing:border-box!important;width:100vw!important;height:100vh!important;height:100dvh!important;padding:16px!important;overflow-y:auto!important;background:rgba(15,23,42,.7)!important}
+.inspection-modal{position:relative!important;display:flex!important;flex-direction:column!important;width:min(850px,100%)!important;max-height:calc(100vh - 32px)!important;max-height:calc(100dvh - 32px)!important;margin:auto 0!important;overflow:hidden!important;border-radius:12px;background:#fff;color:#263238;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.inspection-modal-header{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none;padding:16px 20px;border-bottom:1px solid #e2e8f0;background:#fff}
+.inspection-modal-header h2{margin:0}
+.inspection-modal-close{display:flex;align-items:center;gap:6px;flex:none;padding:8px 13px;border:1px solid #cbd5e1;border-radius:7px;background:#f8fafc;color:#334155;font-size:14px;font-weight:700;cursor:pointer}
+.inspection-modal-close span{font-size:22px;line-height:14px}
+.inspection-modal-close:hover{background:#e2e8f0}
+.inspection-modal-content{min-height:0;overflow-x:hidden!important;overflow-y:auto!important;padding:20px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.inspection-evidence-image{display:block;width:100%;max-height:480px;object-fit:contain;border-radius:8px;background:#0f172a}
+.inspection-no-evidence{padding:70px 20px;text-align:center;border-radius:8px;background:#f1f5f9;color:#64748b}
+.inspection-details-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0 0}
+.inspection-details-grid div{padding:10px;border-radius:6px;background:#f8fafc}
+.inspection-details-grid dt{font-size:12px;font-weight:700;color:#64748b}
+.inspection-details-grid dd{margin:5px 0 0;overflow-wrap:anywhere}
+.inspection-details-grid pre{margin:0;white-space:pre-wrap;font:inherit}
+.inspection-modal-error{color:#c62828}
+@media(max-width:600px){.inspection-details-grid{grid-template-columns:1fr}}

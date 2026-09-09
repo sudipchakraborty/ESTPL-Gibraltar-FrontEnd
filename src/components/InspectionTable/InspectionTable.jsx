@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import "./InspectionTable.css";
+import InspectionDetailsModal from "../InspectionDetails/InspectionDetailsModal";
 
 const SOCKET_SERVER = "http://localhost:3000";
+
+const formatCapturedData = (value) => {
+  if (value === null || value === undefined || value === "") return "-";
+  return typeof value === "object" ? JSON.stringify(value) : String(value);
+};
 
 function InspectionTable() {
   const [inspections, setInspections] = useState([]);
   const [socketConnected, setSocketConnected] = useState(false);
+  const [selectedInspectionId, setSelectedInspectionId] = useState(null);
 
   useEffect(() => {
     const socket = io(SOCKET_SERVER, {
@@ -141,7 +148,7 @@ function InspectionTable() {
               </tr>
             ) : (
               inspections.map((inspection, index) => (
-                <tr key={inspection.id}>
+                <tr key={inspection.id} onClick={() => setSelectedInspectionId(inspection.id)} className="inspection-clickable-row">
                   <td>{index + 1}</td>
 
                   <td>
@@ -159,7 +166,7 @@ function InspectionTable() {
                   <td>{inspection.cameraId}</td>
 
                   <td className="captured-data">
-                    {inspection.capturedData}
+                    {formatCapturedData(inspection.capturedData)}
                   </td>
 
                   <td>{inspection.eventId}</td>
@@ -174,15 +181,9 @@ function InspectionTable() {
 
                   <td>
                     {inspection.evidenceLink ? (
-                      <a
-                        href={
-                          inspection.evidenceLink
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <button className="inspection-view-button" type="button">
                         View
-                      </a>
+                      </button>
                     ) : (
                       "-"
                     )}
@@ -201,6 +202,9 @@ function InspectionTable() {
           </tbody>
         </table>
       </div>
+      {selectedInspectionId && (
+        <InspectionDetailsModal inspectionId={selectedInspectionId} onClose={() => setSelectedInspectionId(null)} />
+      )}
     </section>
   );
 }

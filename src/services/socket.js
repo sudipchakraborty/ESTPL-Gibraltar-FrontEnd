@@ -5,7 +5,7 @@ import { io } from "socket.io-client";
    NODE.JS SOCKET.IO SERVER
 ========================================================= */
 
-const SOCKET_SERVER_URL = "http://192.168.56.1:3000";
+const SOCKET_SERVER_URL = import.meta.env.VITE_SOCKET_SERVER_URL || "http://localhost:3000";
 
 
 /* =========================================================

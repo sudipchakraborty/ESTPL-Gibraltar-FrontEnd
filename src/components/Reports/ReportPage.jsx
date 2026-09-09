@@ -1,7 +1,8 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import ReportRepository from "../../repositories/ReportRepository";
 import "./ReportPage.css";
+import InspectionDetailsModal from "../InspectionDetails/InspectionDetailsModal";
 
 const formatStatus = (status) =>
     status === "PASS" ? "Matched" : status === "FAIL" ? "Mismatch" : status;
@@ -17,6 +18,9 @@ function ReportPage() {
     const [hasGenerated, setHasGenerated] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const [selectedInspectionId, setSelectedInspectionId] = useState(null);
+    const [pageSize, setPageSize] = useState(25);
+    const [currentPage, setCurrentPage] = useState(1);
 
     const filteredRecords = useMemo(() => {
         const now = new Date();
@@ -51,6 +55,20 @@ function ReportPage() {
                 && matchesCamera && matchesModule && matchesStatus;
         });
     }, [records, period, fromDate, toDate, camera, module, status]);
+
+    const totalPages = Math.max(1, Math.ceil(filteredRecords.length / pageSize));
+    const paginatedRecords = useMemo(() => {
+        const start = (currentPage - 1) * pageSize;
+        return filteredRecords.slice(start, start + pageSize);
+    }, [filteredRecords, currentPage, pageSize]);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [period, fromDate, toDate, camera, module, status, pageSize]);
+
+    useEffect(() => {
+        if (currentPage > totalPages) setCurrentPage(totalPages);
+    }, [currentPage, totalPages]);
 
     const cameras = [...new Set(records.map((record) => record.camera_id))];
     const modules = [...new Set(records.map((record) => record.event_type).filter(Boolean))];
@@ -149,6 +167,20 @@ function ReportPage() {
             {error && <p className="report-error" role="alert">{error}</p>}
 
             {hasGenerated && (
+                <div className="report-results-bar">
+                    <p className="report-record-count" role="status">
+                        Found <strong>{filteredRecords.length}</strong> of <strong>{records.length}</strong> records
+                    </p>
+                    <label className="report-page-size">
+                        Records per page
+                        <select value={pageSize} onChange={(event) => setPageSize(Number(event.target.value))}>
+                            {[10, 25, 50, 100].map((size) => <option key={size} value={size}>{size}</option>)}
+                        </select>
+                    </label>
+                </div>
+            )}
+
+            {hasGenerated && (
                 <div className="report-table">
                     <table>
                         <thead>
@@ -164,8 +196,8 @@ function ReportPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {filteredRecords.map((record) => (
-                                <tr key={record.id}>
+                            {paginatedRecords.map((record) => (
+                                <tr key={record.id} onClick={() => setSelectedInspectionId(record.id)} className="report-row">
                                     <td>{new Date(record.timestamp).toLocaleDateString()}</td>
                                     <td>{new Date(record.timestamp).toLocaleTimeString()}</td>
                                     <td>{record.camera_id}</td>
@@ -177,7 +209,7 @@ function ReportPage() {
                                     <td>{record.remarks || "-"}</td>
                                     <td>
                                         {record.evidence_link
-                                            ? <a href={record.evidence_link} target="_blank" rel="noreferrer">View</a>
+                                            ? <button className="report-view-button" type="button">View</button>
                                             : "-"}
                                     </td>
                                 </tr>
@@ -192,6 +224,18 @@ function ReportPage() {
                         </tbody>
                     </table>
                 </div>
+            )}
+            {hasGenerated && filteredRecords.length > 0 && (
+                <nav className="report-pagination" aria-label="Report pagination">
+                    <button type="button" onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>First</button>
+                    <button type="button" onClick={() => setCurrentPage((page) => page - 1)} disabled={currentPage === 1}>Previous</button>
+                    <span>Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong></span>
+                    <button type="button" onClick={() => setCurrentPage((page) => page + 1)} disabled={currentPage === totalPages}>Next</button>
+                    <button type="button" onClick={() => setCurrentPage(totalPages)} disabled={currentPage === totalPages}>Last</button>
+                </nav>
+            )}
+            {selectedInspectionId && (
+                <InspectionDetailsModal inspectionId={selectedInspectionId} onClose={() => setSelectedInspectionId(null)} />
             )}
         </div>
     );

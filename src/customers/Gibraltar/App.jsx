@@ -1,12 +1,13 @@
-import { Navigate, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import LauncherLayout from "./layouts/LauncherLayout";
 import MainLayout from "./layouts/MainLayout";
 
 import Dashboard from "./Dashboard";
-import IndustrialWorkspace from "../../components/IndustrialWorkspace/IndustrialWorkspace";
+import LiveView from "../../components/LiveView/LiveView";
 import ReportPage from "../../components/Reports/ReportPage";
 import { AuthProvider } from "../../modules/Login/context/AuthContext";
+import LandingPage from "./LandingPage";
 
 function AppRoutes() {
     return (
@@ -14,7 +15,7 @@ function AppRoutes() {
             <Route element={<LauncherLayout/>}>
                 <Route
                     path="/"
-                    element={<Navigate to="/dashboard" replace />}
+                    element={<LandingPage />}
                 />
             </Route>
 
@@ -27,7 +28,7 @@ function AppRoutes() {
 
                 <Route
                     path="/live-monitoring"
-                    element={<IndustrialWorkspace/>}
+                    element={<LiveView/>}
                 />
 
                 <Route

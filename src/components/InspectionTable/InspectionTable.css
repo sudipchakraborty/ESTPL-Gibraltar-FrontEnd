@@ -418,3 +418,5 @@
     center;
 
 }
+.inspection-clickable-row{cursor:pointer}
+.inspection-view-button{border:0;background:transparent;color:#0284c7;font-weight:600;cursor:pointer}
